@@ -1,0 +1,23 @@
+{
+    "name": "myApp",
+    "version": "0.0.1",
+    "description": "Add node server in angularJs app and run angularJs app using node server- Amaksik",
+    "dependencies": {
+       "express": "*"
+    },
+    "engine": "node >=0.6.x",
+    "scripts": {
+       "start": "node server.js"
+    },
+    "main": "server.js",
+    "repository": {
+       "type": "git",
+       "url": ""
+    },
+    "author": "Amaksik",
+    "license": "myApp",
+    "bugs": {
+       "url": ""
+    },
+    "homepage": "/"
+ }   

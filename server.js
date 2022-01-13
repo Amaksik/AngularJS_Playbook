@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express();
 
-app.use(express.static('myApp')); // myApp will be the same folder name.
+app.use(express.static('doc')); // myApp will be the same folder name.
 
 app.get('/', function (req, res, next) {
     res.redirect('/');
@@ -10,4 +10,4 @@ app.get('/', function (req, res, next) {
 
 app.listen(8080, 'localhost');
 
-console.log('MyProject Server is Listening on port 8080');
+console.log('MyProject Server is Listening on port http://localhost:8080');

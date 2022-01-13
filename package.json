@@ -1,5 +1,5 @@
 {
-    "name": "myApp",
+    "name": "doc",
     "version": "0.0.1",
     "description": "Add node server in angularJs app and run angularJs app using node server- Amaksik",
     "dependencies": {
@@ -15,7 +15,7 @@
        "url": ""
     },
     "author": "Amaksik",
-    "license": "myApp",
+    "license": "doc",
     "bugs": {
        "url": ""
     },

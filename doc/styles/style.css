@@ -1,0 +1,34 @@
+.d-flex{
+    display: flex;
+    
+}
+
+.jc-around{
+    justify-content: space-around;
+}
+
+.wrapper {
+  background: #fff;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 5px 9px 20px rgb(0 0 0 / 15%);
+}
+
+.sidebar {
+  background: #1e2939;
+  width: 370px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.about-main {
+  padding-left: 90px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.Photo {
+  width: 370px;
+}

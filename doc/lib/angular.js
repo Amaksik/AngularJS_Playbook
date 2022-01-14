@@ -18,16 +18,12 @@
               <!--about me container-->
               <div class="about-main">
 
-                <registration-form name="'amaksik'" > </registration-form >
+                <registration-form ng-hide="$ctrl.username" name="'amaksik'" > </registration-form >
               </div>
 
             </div>`,
-    controller: function($http) {/*
-      var promise = $http.get('https://angularjs-api.herokuapp.com/users');
-      var users = promise.then(function(response){
-        $scope.users = response.data;
-        console.log("inner ctrl"+ $scope.users);
-      });*/
+    controller: function($http) {
+      this.username = localStorage.getItem("username");
     },
     bindings: {
       name: '<'

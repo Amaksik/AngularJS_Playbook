@@ -36,10 +36,12 @@
             </div>
         <!--country-->
             <div class="input_field select_option">
-              <select>
-                <option>Select a country</option>
-                <option ng-repet="country in $ctrl.countries.$$state.value">{{country}</option>
-              </select>
+              
+              
+              <select ng-model="selectedCountry">
+                <option ng-repeat="country in $ctrl.countries.$$state.value | orderBy:country">{{country}}</option>
+                </select>
+
               <div class="select_arrow"></div>
             </div>
           

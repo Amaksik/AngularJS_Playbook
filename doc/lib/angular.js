@@ -19,14 +19,24 @@
     bindings: {
       name: '<'
     },
-      controller: function($http){
-        this.myName = 'Alain';
-        var promise = $http.get('https://angularjs-api.herokuapp.com/users');
-        this.users = promise.then(function(response){
-          return response.data;
-        });
-      }
-})
+    controller: function($http){
+      this.myName = 'Alain';
+      var promise = $http.get('https://angularjs-api.herokuapp.com/users');
+      this.users = promise.then(function(response){
+        return response.data;
+      });
+    }
+  })
+
+  app.component("registrationForm",{
+    templateUrl: './lib/partials/register_template.html',
+
+    controller: function($http) {},
+
+    bindings: {
+      name: '<'
+    }
+  })
 
 })();
 

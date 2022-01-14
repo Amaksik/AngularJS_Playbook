@@ -18,6 +18,7 @@
 .sidebar {
   background: #1e2939;
   width: 630px;
+  padding: 17px;
   padding-top: 40px;
   padding-bottom: 40px;
   color: #fff;
@@ -96,12 +97,7 @@
   text-align: center;
   padding-bottom: 15px;
 }
-.form_wrapper h3 {
-  font-size: 1.1em;
-  font-weight: normal;
-  line-height: 1.5em;
-  margin: 0;
-}
+
 .form_wrapper label {
   font-size: 12px;
 }

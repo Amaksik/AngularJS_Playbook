@@ -1,88 +1,37 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-  <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AngularJS_Playbook</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="lib/angular.js"></script>
-
-
-  </head>
-
-  <body>
-    <div class="wrapper"><!--main container-->
-        
-      <!--side info-->
-      <aside class="sidebar">
-        
-        <sidebar-with-menu name="'amaksik'" > </sidebar-with-menu>
+<head>
   
-        </aside>
-  
-      <!--about me container-->
-      <div class="about-main">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS_Playbook</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="lib/angular.js"></script>
 
-        
-        <div class="form_wrapper">
-          <div class="form_container">
 
-            <div class="title_container">
-              <h2>Registration Form</h2>
-            </div>
-            
-            <div class="row clearfix">
-              <div class="">
-                <form>
-                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                    <input type="email" name="email" placeholder="Email" required />
-                  </div>
-                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                    <input type="password" name="password" placeholder="Password" required />
-                  </div>
-                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                    <input type="password" name="password" placeholder="Re-type Password" required />
-                  </div>
-                  <div class="row clearfix">
-                    <div class="col_half">
-                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                        <input type="text" name="name" placeholder="First Name" />
-                      </div>
-                    </div>
-                    <div class="col_half">
-                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                        <input type="text" name="name" placeholder="Last Name" required />
-                      </div>
-                    </div>
-                  </div>
-                      <div class="input_field radio_option">
-                      <input type="radio" name="radiogroup1" id="rd1">
-                      <label for="rd1">Male</label>
-                      <input type="radio" name="radiogroup1" id="rd2">
-                      <label for="rd2">Female</label>
-                      </div>
-                      <div class="input_field select_option">
-                        <select>
-                          <option>Select a country</option>
-                          <option>Option 1</option>
-                          <option>Option 2</option>
-                        </select>
-                        <div class="select_arrow"></div>
-                      </div>
-                    
-                  <input class="button" type="submit" value="Register" />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+</head>
+
+<body>
+  <div class="wrapper"><!--main container-->
       
-  
-  
-      </div>
+    <!--side info-->
+    <aside class="sidebar">
+      
+      <sidebar-with-menu name="'amaksik'" > </sidebar-with-menu>
+
+    </aside>
+
+    <!--about me container-->
+    <div class="about-main">
+
+      <registration-form name="'amaksik'" > </registration-form >
+    </div>
+    
+
+
   </div>
 
-  </body>
+
+</body>

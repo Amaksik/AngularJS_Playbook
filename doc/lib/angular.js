@@ -4,6 +4,38 @@
 
   var app = angular.module('myApp', ["ngRoute"]);
 
+  app.component("main",{
+    template: `
+            <div class="wrapper"><!--main container-->
+                
+              <!--side info-->
+              <aside class="sidebar">
+                
+                <sidebar-with-menu name="'amaksik'" > </sidebar-with-menu>
+
+              </aside>
+
+              <!--about me container-->
+              <div class="about-main">
+
+                <registration-form name="'amaksik'" > </registration-form >
+              </div>
+
+            </div>`,
+    controller: function($http) {/*
+      var promise = $http.get('https://angularjs-api.herokuapp.com/users');
+      var users = promise.then(function(response){
+        $scope.users = response.data;
+        console.log("inner ctrl"+ $scope.users);
+      });*/
+    },
+    bindings: {
+      name: '<'
+    },
+
+  });
+
+
   app.component("sidebarWithMenu",{
     template: '<p>Hello World and {{$ctrl.name}} ! I`m {{$ctrl.myName}}! </p>'+
               '<br>'+
@@ -26,7 +58,8 @@
         return response.data;
       });
     }
-  })
+  });
+
 
   app.component("registrationForm",{
     templateUrl: './lib/partials/register_template.html',
@@ -36,7 +69,7 @@
     bindings: {
       name: '<'
     }
-  })
+  });
 
 })();
 

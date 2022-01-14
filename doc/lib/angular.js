@@ -60,7 +60,12 @@
   app.component("registrationForm",{
     templateUrl: './lib/partials/register_template.html',
 
-    controller: function($http) {},
+    controller: function($http) {
+      var promise = $http.get('https://angularjs-api.herokuapp.com/countries');
+      this.countries = promise.then(function(response){
+        return response.data;
+      });
+    },
 
     bindings: {
       name: '<'

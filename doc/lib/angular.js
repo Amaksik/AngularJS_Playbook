@@ -22,10 +22,10 @@
       controller: function($http){
         this.myName = 'Alain';
         var promise = $http.get('https://angularjs-api.herokuapp.com/users');
-        var users = promise.then(function(response){
-        $scope.users = response.data;
-        console.log("outer ctrl"+ $scope.users);
-      });
+        this.users = promise.then(function(response){
+          console.log("outer ctrl"+ response.data);
+          return response.data;
+        });
       }
 })
 

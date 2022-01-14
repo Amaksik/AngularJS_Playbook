@@ -19,6 +19,7 @@
               <div class="about-main">
 
                 <registration-form ng-hide="$ctrl.username" name="'amaksik'" > </registration-form >
+                <h1 ng-hide="!$ctrl.username">Hello {{$ctrl.username}}</h1>
               </div>
 
             </div>`,
@@ -59,26 +60,17 @@
 
   app.component("registrationForm",{
     templateUrl: './lib/partials/register_template.html',
-    controller: function($http) {/*
-      var promise = $http.get('https://angularjs-api.herokuapp.com/users');
-      var users = promise.then(function(response){
-        $scope.users = response.data;
-        console.log("inner ctrl"+ $scope.users);
-      });*/
-    },
-    bindings: {
-      name: '<'
+    controller: function($http) {
+
     },
     controller: function($http) {
       var promise = $http.get('https://angularjs-api.herokuapp.com/countries');
       this.countries = promise.then(function(response){
         return response.data;
       });
-      console.log(this.countries);
-    },
-
-    bindings: {
-      name: '<'
+      this.submit = (name)=>{
+        localStorage.setItem("username",name);
+      }
     }
   });
 

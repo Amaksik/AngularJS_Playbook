@@ -10,30 +10,32 @@
       <form>
         <!--email-->
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-          <input type="email" name="email" placeholder="Email" required />
+          <input type="email" name="email" placeholder="Email"  />
         </div>
         <!--password-->
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-          <input type="password" name="password" placeholder="Password" required />
+          <input type="password" name="password" placeholder="Password"  />
         </div>
         <!--name-->
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-          <input type="text" name="name" placeholder="First Name" />
+          <input type="text" ng-required ="true" name="name" placeholder="First Name" ng-model="username" />
         </div>
         <!--surname-->
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
           <input type="text" name="name" placeholder="Last Name" required />
         </div>
         <!--gender-->
+
+        <div class="input_field radio_option">
+          <input type="radio" name="radiogroup1" id="rd1">
+          <label for="rd1">Male</label>
+          <input type="radio" name="radiogroup1" id="rd2">
+          <label for="rd2">Female</label>
+          <input type="radio" name="radiogroup1" id="rd3">
+          <label for="rd3">Other</label>
         </div>
-            <div class="input_field radio_option">
-              <input type="radio" name="radiogroup1" id="rd1">
-              <label for="rd1">Male</label>
-              <input type="radio" name="radiogroup1" id="rd2">
-              <label for="rd2">Female</label>
-              <input type="radio" name="radiogroup1" id="rd3">
-              <label for="rd3">Other</label>
-            </div>
+
+
         <!--country-->
             <div class="input_field select_option">
               
@@ -45,7 +47,7 @@
               <div class="select_arrow"></div>
             </div>
           
-        <input class="button" type="submit" value="Register" />
+        <input class="button" ng-click="$ctrl.submit(username)" type="submit" value="Register" />
       </form>
     </div>
     

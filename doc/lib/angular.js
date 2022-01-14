@@ -8,7 +8,7 @@
     template: '<p>Hello World and {{$ctrl.name}} ! I`m {{$ctrl.myName}}! </p>'+
               '<br>'+
               'list below\n'+
-              '<ul> <li ng-repeat="user in users">{{user.name}}</li></ul>',
+              '<ul> <li ng-repeat="user in $ctrl.users.$$state.value">{{user.name}}</li></ul>',
     controller: function($http) {/*
       var promise = $http.get('https://angularjs-api.herokuapp.com/users');
       var users = promise.then(function(response){
@@ -23,7 +23,6 @@
         this.myName = 'Alain';
         var promise = $http.get('https://angularjs-api.herokuapp.com/users');
         this.users = promise.then(function(response){
-          console.log("outer ctrl"+ response.data);
           return response.data;
         });
       }

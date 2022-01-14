@@ -63,13 +63,16 @@
     controller: function($http) {
 
     },
-    controller: function($http) {
+    controller: function($http, $window) {
       var promise = $http.get('https://angularjs-api.herokuapp.com/countries');
       this.countries = promise.then(function(response){
         return response.data;
       });
       this.submit = (name)=>{
         localStorage.setItem("username",name);
+        $window.location.reload();
+
+
       }
     }
   });

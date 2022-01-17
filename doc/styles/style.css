@@ -146,7 +146,7 @@
   background: #fafafa;
 }
 .form_wrapper input[type=text]:focus, .form_wrapper input[type=email]:focus, .form_wrapper input[type=password]:focus {
-  box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+  box-shadow: 0 0 2px 1px #394e6d;
   border: 1px solid #1e2939;
   background: #fafafa;
 }
@@ -304,6 +304,19 @@
 .credit a {
   color: #1e2939;
 }
+.button{
+  background: #1e2939;
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
 
 @media (max-width: 600px) {
   .form_wrapper .col_half {
@@ -319,5 +332,6 @@
   .form_container .row .col_half.last {
     border-left: none;
   }
+
 
 }

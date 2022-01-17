@@ -1,4 +1,3 @@
-
 (function() {
   'use strict';
 
@@ -38,22 +37,76 @@
     controller: function($http) {
 
     },
+    bindings: {
+      email: '@',
+      password: '@',
+      firstname: '@',
+      lastname: '@'
+    },
     controller: function($http, $window) {
+      $http.defaults.headers
+
       var promise = $http.get('https://angularjs-api.herokuapp.com/countries');
       this.countries = promise.then(function(response){
         return response.data;
       });
-      this.submit = (name)=>{
-        localStorage.setItem("username",name);
-        $window.location.reload();
+      this.submit = ()=>{
+        console.log(this.IsAllFilled());
+        if(this.IsAllFilled()){
+
+          var user = {
+            name: this.firstname,
+            surname: this.lastname,
+            email:this.email,
+            password:this.password,
+            age:23,
+            "gender":"other"
+          };
+
+          var req = {
+            method: 'POST',
+            url: 'https://angularjs-api.herokuapp.com/users',
+            headers: {
+              'Content-Type': "application/json",
+              'Authorization':"none"
+            },
+            data: JSON.stringify(user)
+          }
+           
+          $http(req).then(function (response) {
+            console.log("ok sended" + response.data);
+            localStorage.setItem("username",this.firstname);
+            $window.location.reload();
+          }, 
+          function (response) 
+          {
+            console.log("sended" + response.data);
+          });
+
+          /*$http.post('https://angularjs-api.herokuapp.com/users', JSON.stringify(user))
+          .then(function (response) {
+            console.log("sended" + response);
+            localStorage.setItem("username",this.firstname);
+            $window.location.reload();
+          }, 
+          function (response) 
+          {
+            console.log("sended" + response);
+          });*/
+
+        }
+        else{alert("failed")}
 
 
       }
       this.IsAllFilled = ()=>{
-        if(this.name){
-
+        if(this.email && this.password && this.firstname && this.lastname){
+          console.log("all filled");
+          return true;
         }
-        else{return true}
+        else{
+          console.log("not all filled");
+          return false}
       }
     }
   });

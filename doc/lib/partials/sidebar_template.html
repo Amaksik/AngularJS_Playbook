@@ -1,0 +1,9 @@
+<div>
+    <p>Hello World and {{$ctrl.name}} ! I`m {{$ctrl.myName}}! </p>
+    <br>
+    <p>list below\n </p>
+    <ul> 
+        <li ng-repeat="user in $ctrl.users.$$state.value">{{user.name}}</li>
+    </ul>
+
+</div>

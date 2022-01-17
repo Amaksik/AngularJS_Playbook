@@ -47,7 +47,7 @@
               <div class="select_arrow"></div>
             </div>
           
-        <input class="button" ng-click="$ctrl.submit(username)" type="submit" value="Register" />
+        <input class="button" ng-click="$ctrl.submit(username)" ng-disabled='IsAllFilled()' type="submit" value="Register" />
       </form>
     </div>
     

@@ -1,0 +1,11 @@
+<div>
+    <h1>Hello {{$ctrl.user.$$state.value.name}} {{$ctrl.user.$$state.value.surname}} </h1>
+    <p >This is your profile page. You can see your info manage your projects or assigned tasks</p>
+    <p>Your age is {{$ctrl.user.$$state.value.age}}</p>
+
+    <br>
+    <a href="#!" >Edit profile</a>
+    <br>
+    <a href="#!" ng-Click="$ctrl.logout()">Delete profile</a>
+
+</div>

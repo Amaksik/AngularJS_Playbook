@@ -7,6 +7,10 @@
     templateUrl : "./lib/partials/main_template.html" ,
     controller: function($http) {
       this.username = localStorage.getItem("username");
+      this.id = localStorage.getItem("userid");
+      this.componentsconfig = {
+        showlogin : true
+      }
     },
     bindings: {
       name: '<'
@@ -44,6 +48,7 @@
       lastname: '@'
     },
     controller: function($http, $window) {
+      //console.log("parentscope" + main.componentsconfig.showlogin)
       $http.defaults.headers
 
       var promise = $http.get('https://angularjs-api.herokuapp.com/countries');
@@ -51,7 +56,7 @@
         return response.data;
       });
       this.submit = ()=>{
-        console.log(this.IsAllFilled());
+        //console.log(this.IsAllFilled());
         if(this.IsAllFilled()){
 
           var user = {
@@ -59,19 +64,21 @@
             surname: this.lastname,
             email:this.email,
             password:this.password,
-            age:23,
+            age:19,
             gender: "other"
           };
-
+          localStorage.setItem("username",user.name);
           $http.post('https://angularjs-api.herokuapp.com/users', JSON.stringify(user))
           .then(function (response) {
             console.log("ok -> " + response.data);
-            localStorage.setItem("username",response.data);
-            //$window.location.reload();
+            localStorage.setItem("userid",response.data);
+            localStorage.setItem("userid",response.data);
+            $window.location.reload();
           }, 
           function (response) 
           {
             console.log("eror -> " + response.data);
+            localStorage.removeItem("username");
           });
 
         }
@@ -122,6 +129,34 @@
     }
   });
 
+  app.component("userPage",{
+    templateUrl:"./lib/partials/userpage_template.html",
+    controller: function( $http, $window){
+      this.id = localStorage.getItem("userid");
+      this.correct = true;
+      var promise = $http.get(`https://angularjs-api.herokuapp.com/users/${parseInt(this.id)}`);
+      
+      this.user = promise.then(function(response){
+        return response.data;
+      });;
+
+      this.logout = ()=>{
+        var id = localStorage.getItem("userid");
+        if(id) {
+
+          var promise = $http.delete(`https://angularjs-api.herokuapp.com/users/${parseInt(this.id)}`);
+          promise.then(function(response){
+            console.log(response.data);          
+            localStorage.removeItem("userid");
+            localStorage.removeItem("username");
+            $window.location.reload();
+          });
+        }
+        else
+        {$window.location.reload();}
+      }
+    }
+  })
 
 })();
 

@@ -67,7 +67,7 @@
           .then(function (response) {
             console.log("ok -> " + response.data);
             localStorage.setItem("username",response.data);
-            $window.location.reload();
+            //$window.location.reload();
           }, 
           function (response) 
           {
@@ -90,6 +90,38 @@
       }
     }
   });
+
+  app.component("loginForm",{
+    templateUrl: './lib/partials/login_template.html',
+    bindings: {
+      email: '@',
+      password: '@',
+    },
+    controller: function($http, $window) {
+      $http.defaults.headers
+
+      this.login = ()=>{
+
+        var credentials = {
+          email:this.email,
+          password:this.password
+        };
+
+        $http.post('https://angularjs-api.herokuapp.com/users', JSON.stringify(credentials))
+        .then(function (response) {
+          console.log("ok -> " + response.data);
+          localStorage.setItem("userid",response.data);
+          //$window.location.reload();
+        }, 
+        function (response) 
+        {
+          console.log("eror -> " + response.data);
+        });
+
+      }
+    }
+  });
+
 
 })();
 

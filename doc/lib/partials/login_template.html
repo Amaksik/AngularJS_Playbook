@@ -1,0 +1,24 @@
+<div class="form_wrapper ">
+        
+
+    <div class="title_container">
+      <h2>Registration Form</h2>
+    </div>
+
+    <div class="row">
+    
+      <form>
+        <!--email-->
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+          <input type="email" name="email" placeholder="Email" ng-required ="true" ng-model="$ctrl.email" />
+        </div>
+        <!--password-->
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+          <input type="password" name="password" placeholder="Password"ng-required ="true" ng-model="$ctrl.password"  />
+        </div>
+          
+        <button  class="button" ng-click="$ctrl.login()" type="submit">Log In</button>
+      </form>
+    </div>
+    
+  </div>

@@ -60,39 +60,19 @@
             email:this.email,
             password:this.password,
             age:23,
-            "gender":"other"
+            gender: "other"
           };
 
-          var req = {
-            method: 'POST',
-            url: 'https://angularjs-api.herokuapp.com/users',
-            headers: {
-              'Content-Type': "application/json",
-              'Authorization':"none"
-            },
-            data: JSON.stringify(user)
-          }
-           
-          $http(req).then(function (response) {
-            console.log("ok sended" + response.data);
-            localStorage.setItem("username",this.firstname);
-            $window.location.reload();
-          }, 
-          function (response) 
-          {
-            console.log("sended" + response.data);
-          });
-
-          /*$http.post('https://angularjs-api.herokuapp.com/users', JSON.stringify(user))
+          $http.post('https://angularjs-api.herokuapp.com/users', JSON.stringify(user))
           .then(function (response) {
-            console.log("sended" + response);
-            localStorage.setItem("username",this.firstname);
+            console.log("ok -> " + response.data);
+            localStorage.setItem("username",response.data);
             $window.location.reload();
           }, 
           function (response) 
           {
-            console.log("sended" + response);
-          });*/
+            console.log("eror -> " + response.data);
+          });
 
         }
         else{alert("failed")}

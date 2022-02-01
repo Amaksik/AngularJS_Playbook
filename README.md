@@ -34,6 +34,7 @@ To run this project, clone it locally using git bash:
 $ git clone ...
 $ cd ../doc
 $ npm install
+$ npm install axios express
 $ npm start
 ```
 
